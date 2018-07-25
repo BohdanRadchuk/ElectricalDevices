@@ -9,6 +9,16 @@
     <servlet-class>com.trainings.HelloWeb</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>HouseServlet</servlet-name>
+    <servlet-class>com.trainings.servlets.HouseServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>HouseServlet</servlet-name>
+    <url-pattern>/house</url-pattern>
+  </servlet-mapping>
+
   <servlet-mapping>
     <servlet-name>HelloWeb</servlet-name>
     <url-pattern>/hello</url-pattern>

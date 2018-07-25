@@ -1,5 +1,10 @@
 package com.trainings;
 
+import com.trainings.entity.Devices;
+import com.trainings.entity.ElectricalDevice;
+import com.trainings.service.House;
+import com.trainings.entity.kitchen.CookStove;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,6 +21,10 @@ public class HelloWeb extends HttpServlet {
 
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         message = GET_MESSAGE;
+        ElectricalDevice cookStove = new CookStove(Devices.STOVE);
+        House house = new House();
+        house.addDevice(cookStove);
+
         req.setAttribute(ATTRIBUTE_NAME, message);
         req.getRequestDispatcher(URL).forward(req, resp);
     }
