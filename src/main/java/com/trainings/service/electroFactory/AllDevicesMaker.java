@@ -8,7 +8,7 @@ public class AllDevicesMaker {
         if (deviceToMake.equals(Devices.STOVE)){
             return new CookStoveMaker();
         }
-        if (deviceToMake.equals(Devices.COFFE_MACHINE)){
+        if (deviceToMake.equals(Devices.COFFEE_MACHINE)){
             return new CoffeeMachineMaker();
         }
         else throw new RuntimeException("There is no such device prototype" + deviceToMake);

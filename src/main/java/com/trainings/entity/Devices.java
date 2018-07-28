@@ -2,7 +2,7 @@ package com.trainings.entity;
 
 public enum Devices {
     STOVE ("Electrolux", 20),
-    COFFE_MACHINE ("Delonghi", 7)
+    COFFEE_MACHINE("Delonghi", 7)
     ;
     private final String manufacturer;
     private final int energyConsuming;

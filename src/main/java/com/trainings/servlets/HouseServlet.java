@@ -12,13 +12,13 @@ import java.util.ArrayList;
 
 public class HouseServlet extends HttpServlet {
     private House house = new House();
-
+    ArrayList<ElectricalDevice> electricalDevices = house.getAllDevicesInHouse();
 
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         if (house.getAllDevicesInHouse().isEmpty()){
             house.buyAllDevices();
         }
-        ArrayList<ElectricalDevice> electricalDevices = house.getAllDevicesInHouse();
+
         for (ElectricalDevice ads: electricalDevices
              ) {
             System.out.println(ads.getEnergyConsuming());
@@ -26,5 +26,19 @@ public class HouseServlet extends HttpServlet {
         req.setAttribute("HouseDevices", electricalDevices);
 
         req.getRequestDispatcher("house.jsp").forward(req,resp);
+    }
+
+    public void doPost (HttpServletRequest req,HttpServletResponse resp) throws ServletException, IOException{
+
+        for (int i = 0; i<electricalDevices.size(); i++){
+            if (req.getParameter("someSwitchOption"+i)!=null)electricalDevices.get(i).turnOn();
+        }
+        System.out.println(electricalDevices);
+        boolean asd =req.getParameter("someSwitchOption1")!=null;
+        System.out.println(asd);
+        req.setAttribute("HouseDevices", electricalDevices);
+        req.getRequestDispatcher("house.jsp").forward(req,resp);
+
+
     }
 }

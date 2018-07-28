@@ -3,7 +3,7 @@ package com.trainings.entity.kitchen;
 import com.trainings.entity.Devices;
 import com.trainings.entity.ElectricalDevice;
 
-public class CoffeeMachine extends ElectricalDevice implements CookingDevice {
+public class CoffeeMachine extends ElectricalDevice {
 
     public CoffeeMachine(Devices devices) {
         super(devices);
@@ -12,11 +12,6 @@ public class CoffeeMachine extends ElectricalDevice implements CookingDevice {
     @Override
     public String interact() {
         return "BulBulbull";
-    }
-
-    @Override
-    public void cook() {
-        System.out.println("making coffee");
     }
 
     @Override
