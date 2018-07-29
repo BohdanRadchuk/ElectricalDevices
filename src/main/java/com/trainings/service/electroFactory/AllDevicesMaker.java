@@ -1,7 +1,6 @@
 package com.trainings.service.electroFactory;
 
 import com.trainings.entity.Devices;
-import com.trainings.service.ElectricalDeviceMaker;
 
 public class AllDevicesMaker {
     public static ElectricalDeviceMaker getMakerByEnum (Devices deviceToMake){
@@ -10,6 +9,21 @@ public class AllDevicesMaker {
         }
         if (deviceToMake.equals(Devices.COFFEE_MACHINE)){
             return new CoffeeMachineMaker();
+        }
+        if (deviceToMake.equals(Devices.BLENDER)){
+            return new BlenderMaker();
+        }
+        if (deviceToMake.equals(Devices.WASHING_MACHINE)){
+            return new WashingMachineMaker();
+        }
+        if (deviceToMake.equals(Devices.VACUUM)){
+            return new VacuumCleanerMaker();
+        }
+        if (deviceToMake.equals(Devices.TV)){
+            return new TVSetMaker();
+        }
+        if (deviceToMake.equals(Devices.COMPUTER)){
+            return new ComputerMaker();
         }
         else throw new RuntimeException("There is no such device prototype" + deviceToMake);
     }

@@ -1,4 +1,4 @@
-package com.trainings.service;
+package com.trainings.service.electroFactory;
 
 import com.trainings.entity.Devices;
 import com.trainings.entity.ElectricalDevice;

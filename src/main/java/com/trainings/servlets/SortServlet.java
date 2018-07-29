@@ -19,10 +19,7 @@ public class SortServlet extends HttpServlet {
     private ArrayList<ElectricalDevice> electricalDevices = devicesInHouse.getAllDevicesInHouse();
 
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         electricalDevices = new ArrayList<>(devicesSorter.sortElectricalDevicesByPower(electricalDevices));
-        System.out.println(electricalDevices);
-
         resp.sendRedirect(HouseServlet.REDIRECT_URL);
     }
 }
