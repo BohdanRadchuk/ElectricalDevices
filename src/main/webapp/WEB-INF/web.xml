@@ -5,8 +5,8 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
   <servlet>
-    <servlet-name>HelloWeb</servlet-name>
-    <servlet-class>com.trainings.HelloWeb</servlet-class>
+    <servlet-name>SortServlet</servlet-name>
+    <servlet-class>com.trainings.servlets.SortServlet</servlet-class>
   </servlet>
 
   <servlet>
@@ -15,12 +15,14 @@
   </servlet>
 
   <servlet-mapping>
+    <servlet-name>SortServlet</servlet-name>
+    <url-pattern>/sorthouse</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
     <servlet-name>HouseServlet</servlet-name>
     <url-pattern>/house</url-pattern>
   </servlet-mapping>
 
-  <servlet-mapping>
-    <servlet-name>HelloWeb</servlet-name>
-    <url-pattern>/hello</url-pattern>
-  </servlet-mapping>
+
 </web-app>

@@ -13,13 +13,4 @@ public class CookStove extends ElectricalDevice{
     public String interact() {
         return "Pshhshshsh";
     }
-
-    @Override
-    public String toString() {
-        return "CookStove{" +
-                "manufacturer='" + manufacturer + '\'' +
-                ", energyConsuming=" + energyConsuming +
-                ", turnedOn=" + turnedOn +
-                '}';
-    }
 }

@@ -1,16 +1,15 @@
-package com.trainings.entity.kitchen;
+package com.trainings.entity.bathroom;
 
 import com.trainings.entity.Devices;
 import com.trainings.entity.ElectricalDevice;
 
-public class CoffeeMachine extends ElectricalDevice {
-
-    public CoffeeMachine(Devices devices) {
+public class WashingMachine extends ElectricalDevice {
+    public WashingMachine(Devices devices) {
         super(devices);
     }
 
     @Override
     public String interact() {
-        return "BulBulbull";
+        return "wshhh";
     }
 }

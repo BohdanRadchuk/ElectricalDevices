@@ -1,21 +1,34 @@
 package com.trainings.entity;
 
 public enum Devices {
-    STOVE ("Electrolux", 20),
-    COFFEE_MACHINE("Delonghi", 7)
-    ;
+    STOVE("Stove", "images/cook_stove.jpg", "Electrolux", 20),
+    COFFEE_MACHINE("Coffee machine", "images/coffee_machine.jpg", "Delonghi", 7);
+
+    private final String type;
+    private final String imgUrl;
     private final String manufacturer;
     private final int energyConsuming;
 
-    Devices(String manufacturer, int energyConsuming) {
+    Devices(String type, String imageURL, String manufacturer, int energyConsuming) {
+        this.type = type;
+        this.imgUrl = imageURL;
         this.manufacturer = manufacturer;
         this.energyConsuming = energyConsuming;
     }
 
-    public String manufacturer(){
+    public String type(){
+        return type;
+    }
+
+    public String imgUrl() {
+        return imgUrl;
+    }
+
+    public String manufacturer() {
         return manufacturer;
     }
-    public int energyConsuming(){
+
+    public int energyConsuming() {
         return energyConsuming;
     }
 

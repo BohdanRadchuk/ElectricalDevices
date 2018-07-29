@@ -1,7 +1,8 @@
 package com.trainings.servlets;
 
+import com.trainings.entity.DevicesInHouse;
 import com.trainings.entity.ElectricalDevice;
-import com.trainings.service.House;
+import com.trainings.service.EnergyCalculator;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -11,34 +12,42 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class HouseServlet extends HttpServlet {
-    private House house = new House();
-    ArrayList<ElectricalDevice> electricalDevices = house.getAllDevicesInHouse();
+    private static final String HOUSE_DEVICES = "HouseDevices";
+    private static final String TOTAL_ENERGY = "totalEnergy";
+    private static final String HOUSE_JSP = "house.jsp";
+    public static final String REDIRECT_URL = "/house";
+    private static final String POWER_CHECKBOX_NAME = "switchOption";
+
+    private DevicesInHouse devicesInHouse = DevicesInHouse.getInstance();
+
+    private ArrayList<ElectricalDevice> electricalDevices;
+
 
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if (house.getAllDevicesInHouse().isEmpty()){
-            house.buyAllDevices();
+        if (devicesInHouse.getAllDevicesInHouse().isEmpty()) {
+            electricalDevices = devicesInHouse.buyAllDevices();
         }
 
-        for (ElectricalDevice ads: electricalDevices
-             ) {
-            System.out.println(ads.getEnergyConsuming());
-        }
-        req.setAttribute("HouseDevices", electricalDevices);
+        req.setAttribute(HOUSE_DEVICES, electricalDevices);
+        req.setAttribute(TOTAL_ENERGY, EnergyCalculator.totalEnergyConsuming(electricalDevices));
 
-        req.getRequestDispatcher("house.jsp").forward(req,resp);
+        req.getRequestDispatcher(HOUSE_JSP).forward(req, resp);
     }
 
-    public void doPost (HttpServletRequest req,HttpServletResponse resp) throws ServletException, IOException{
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        for (int i = 0; i<electricalDevices.size(); i++){
-            if (req.getParameter("someSwitchOption"+i)!=null)electricalDevices.get(i).turnOn();
+        for (int i = 0; i < electricalDevices.size(); i++) {
+
+            //each checkbox name consists of name and array index
+            if (req.getParameter(POWER_CHECKBOX_NAME + i) != null) {
+                electricalDevices.get(i).turnOn();
+            } else {
+                electricalDevices.get(i).turnOff();
+            }
         }
-        System.out.println(electricalDevices);
-        boolean asd =req.getParameter("someSwitchOption1")!=null;
-        System.out.println(asd);
-        req.setAttribute("HouseDevices", electricalDevices);
-        req.getRequestDispatcher("house.jsp").forward(req,resp);
-
-
+        //devicesSorter.sortElectricalDevicesByPower(electricalDevices);
+        //req.setAttribute(HOUSE_DEVICES, electricalDevices);
+        resp.sendRedirect(REDIRECT_URL);
+        //req.getRequestDispatcher(HOUSE_JSP).forward(req, resp);
     }
 }

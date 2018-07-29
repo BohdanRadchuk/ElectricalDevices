@@ -1,12 +1,17 @@
 package com.trainings.entity;
 
 public abstract class ElectricalDevice {
-    protected String manufacturer;
-    public int energyConsuming;
-    protected boolean turnedOn;
+
+    private String type;
+    private String imgUrl;
+    private String manufacturer;
+    private int energyConsuming;
+    private boolean turnedOn;
 
 
     public ElectricalDevice(Devices devices) {
+        this.type = devices.type();
+        this.imgUrl = devices.imgUrl();
         this.manufacturer = devices.manufacturer();
         this.energyConsuming = devices.energyConsuming();
         this.turnedOn = false;
@@ -26,6 +31,14 @@ public abstract class ElectricalDevice {
 
     public void turnOff() {
         this.turnedOn = false;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
     }
 
     public String getManufacturer() {

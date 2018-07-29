@@ -8,7 +8,7 @@
     <title>Hello</title>>
 </head>
 <body>
-<h2>Hello World!</h2>
+<%--<h2>Hello World!</h2>
 <h3>
     <c:out value="${message}"/>
 </h3>
@@ -16,7 +16,7 @@
     <h3>Type your message here</h3>
     <input type="text" name="inputMessage"><br>
     <input type="submit" value="doPost">
-</form>
+</form>--%>
 
 <div class="col-md-2 col-md-offset-5">
     <a href="/house" class="btn btn-success">Buy typical electric devices to the house</a>

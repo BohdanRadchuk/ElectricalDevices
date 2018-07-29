@@ -1,6 +1,6 @@
 .table {
     margin: auto;
-    width: 50% !important;
+    width: 70% !important;
 }
 
 .material-switch > input[type="checkbox"] {
@@ -9,7 +9,7 @@
 
 .material-switch > label {
     cursor: pointer;
-    margin-top: auto;
+    margin-top: 20px;
     height: 0px;
     position: relative;
     width: 40px;
