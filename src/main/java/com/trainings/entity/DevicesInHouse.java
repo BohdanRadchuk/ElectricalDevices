@@ -33,7 +33,7 @@ public class DevicesInHouse {
     }
 
 
-    private void createDevice(Devices device) {
+    public void createDevice(Devices device) {
         if (device != null) {
             addDevice(AllDevicesMaker.getMakerByEnum(device).createElectricalDevice(device));
         }
@@ -47,9 +47,6 @@ public class DevicesInHouse {
     }
 
     public ArrayList<ElectricalDevice> matchedDevicesInRange(String start, String end) {
-        /*DevicesInHouse devicesInHouse = DevicesInHouse.getInstance();
-        ArrayList<ElectricalDevice> devices = devicesInHouse.getAllDevicesInHouse();
-        */
         ArrayList<ElectricalDevice> matchedDevices = new ArrayList<>();
         for (ElectricalDevice device : this.allDevicesInHouse) {
 
