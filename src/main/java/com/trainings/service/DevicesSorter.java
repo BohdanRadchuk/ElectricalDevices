@@ -23,5 +23,14 @@ public class DevicesSorter {
         return deviceList;
     }
 
-
+    public static boolean checkForInt(String property_value) {
+        try {
+            Integer.parseInt(property_value);
+        } catch (NumberFormatException e) {
+            return false;
+        } catch (NullPointerException e) {
+            return false;
+        }
+        return true;
+    }
 }

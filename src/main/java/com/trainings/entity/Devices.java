@@ -3,14 +3,11 @@ package com.trainings.entity;
 public enum Devices {
     STOVE("Stove", "images/cook_stove.jpg", "Electrolux", 20),
     COFFEE_MACHINE("Coffee machine", "images/coffee_machine.jpg", "Delonghi", 7),
-
     WASHING_MACHINE("Washing machine", "images/washing.jpg", "Zanussi", 29),
-    VACUUM("Vacuum cleaner","images/vacuum.jpg","Philips",10),
+    VACUUM("Vacuum cleaner", "images/vacuum.jpg", "Philips", 10),
     COMPUTER("Computer", "images/pc.jpg", "Apple", 6),
     TV("TV", "images/tv.jpg", "LG", 9),
-    BLENDER("Blender", "images/blender.jpg", "BOSCH", 2)
-            ;
-
+    BLENDER("Blender", "images/blender.jpg", "BOSCH", 2);
 
     private final String type;
     private final String imgUrl;
@@ -47,4 +44,4 @@ public enum Devices {
                 ", energyConsuming=" + energyConsuming +
                 '}';
     }
-    }
+}

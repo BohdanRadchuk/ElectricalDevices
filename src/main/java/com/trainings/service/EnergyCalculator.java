@@ -21,5 +21,4 @@ public class EnergyCalculator {
             return 0;
         }
     }
-
 }

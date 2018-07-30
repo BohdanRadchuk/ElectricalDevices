@@ -34,7 +34,7 @@ public class HouseServlet extends HttpServlet {
         req.getRequestDispatcher(HOUSE_JSP).forward(req, resp);
     }
 
-    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
         for (int i = 0; i < electricalDevices.size(); i++) {
 
@@ -45,9 +45,6 @@ public class HouseServlet extends HttpServlet {
                 electricalDevices.get(i).turnOff();
             }
         }
-        //devicesSorter.sortElectricalDevicesByPower(electricalDevices);
-        //req.setAttribute(HOUSE_DEVICES, electricalDevices);
         resp.sendRedirect(REDIRECT_URL);
-        //req.getRequestDispatcher(HOUSE_JSP).forward(req, resp);
     }
 }

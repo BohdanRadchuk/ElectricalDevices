@@ -44,8 +44,20 @@ public class DevicesInHouse {
             createDevice(d);
         }
         return allDevicesInHouse;
-
     }
 
+    public ArrayList<ElectricalDevice> matchedDevicesInRange(String start, String end) {
+        /*DevicesInHouse devicesInHouse = DevicesInHouse.getInstance();
+        ArrayList<ElectricalDevice> devices = devicesInHouse.getAllDevicesInHouse();
+        */
+        ArrayList<ElectricalDevice> matchedDevices = new ArrayList<>();
+        for (ElectricalDevice device : this.allDevicesInHouse) {
 
+            if (device.getEnergyConsuming() >= Integer.parseInt(start) &&
+                    device.getEnergyConsuming() <= Integer.parseInt(end)) {
+                matchedDevices.add(device);
+            }
+        }
+        return matchedDevices;
+    }
 }

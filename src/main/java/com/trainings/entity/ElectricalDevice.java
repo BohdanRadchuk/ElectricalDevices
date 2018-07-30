@@ -54,4 +54,15 @@ public abstract class ElectricalDevice {
     }
 
     public abstract String interact();
+
+    @Override
+    public String toString() {
+        return "ElectricalDevice{" +
+                "type='" + type + '\'' +
+                ", imgUrl='" + imgUrl + '\'' +
+                ", manufacturer='" + manufacturer + '\'' +
+                ", energyConsuming=" + energyConsuming +
+                ", turnedOn=" + turnedOn +
+                '}';
+    }
 }

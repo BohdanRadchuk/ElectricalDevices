@@ -10,13 +10,14 @@
 </head>
 <body>
 
-<table class="table table-hover ">
+<table class="table table-hover">
     <form method="post" action="/sorthouse">
         <input class="btn btn-info btn-lg btn-block" type="submit" value="Sort">
     </form>
     <form method="post" action="/house">
+        <input class="btn btn-success btn-lg btn-block" type="submit" value="Power">
         <c:forEach items="${HouseDevices}" var="item" varStatus="status">
-          <%--  <c:out value="${status.index}"/>--%>
+            <%--  <c:out value="${status.index}"/>--%>
             <div class="container">
                 <tr>
                     <td><img src="${item.imgUrl}"></td>
@@ -45,12 +46,17 @@
                 </tr>
             </div>
         </c:forEach>
-        <input class="btn btn-warning btn-lg btn-block" type="submit" value="Power">
     </form>
 
 </table>
 <div>
     <h3 class="text-center">Total energy consuming at the moment: ${totalEnergy} </h3>
 </div>
+<form method="post" action="/search_prop">
+    <h4>Enter your power value to find a device</h4>
+    <input type="text" placeholder="search from" name="powerStart">
+    <input type="text" placeholder="search to" name="powerEnd">
+    <input class="btn btn-warning btn-lg btn-block" type="submit" value="Search">
+</form>
 </body>
 </html>
