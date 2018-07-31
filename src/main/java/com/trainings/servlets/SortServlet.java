@@ -10,6 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Redirects to {@link com.trainings.servlets.HouseServlet}
+ * with sorted by electric consuming {@code List<ElectricalDevices>}
+ */
 public class SortServlet extends HttpServlet {
 
     private DevicesInHouse devicesInHouse = DevicesInHouse.getInstance();

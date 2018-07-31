@@ -16,8 +16,14 @@
     </form>
     <form method="post" action="/house">
         <input class="btn btn-success btn-lg btn-block" type="submit" value="Power">
+
+        <th>Image</th>
+        <th>Device type</th>
+        <th>Manufacturer</th>
+        <th>Energy consuming</th>
+        <th>Energy consuming now</th>
+        <th>On/Off</th>
         <c:forEach items="${HouseDevices}" var="item" varStatus="status">
-            <%--  <c:out value="${status.index}"/>--%>
             <div class="container">
                 <tr>
                     <td><img src="${item.imgUrl}"></td>

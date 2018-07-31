@@ -1,5 +1,11 @@
 package com.trainings.entity;
 
+/**
+ * Contains all devices that can be used
+ *
+ * @author Bohdan Radchuk
+ */
+
 public enum Devices {
     STOVE("Stove", "images/cook_stove.jpg", "Electrolux", 20),
     COFFEE_MACHINE("Coffee machine", "images/coffee_machine.jpg", "Delonghi", 7),

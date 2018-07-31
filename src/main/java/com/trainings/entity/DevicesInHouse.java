@@ -4,13 +4,33 @@ import com.trainings.service.electroFactory.AllDevicesMaker;
 
 import java.util.ArrayList;
 
+
+/**
+ * Singleton entity that contains ArrayList
+ * of used devices
+ *
+ * @author Bohdan Radchuk
+ */
+
 public class DevicesInHouse {
     private static volatile DevicesInHouse instance = null;
     private ArrayList<ElectricalDevice> allDevicesInHouse = new ArrayList<>();
 
+    /**
+     * private constructor for singleton realization
+     */
     private DevicesInHouse() {
     }
 
+
+    /**
+     * Singleton realization for multithreaded systems.
+     * Creates new entity of this class or send link for
+     * existing one
+     *
+     * @return new instance if it has not been created yet
+     * otherwise the existing one
+     */
     public static DevicesInHouse getInstance() {
         if (instance == null) {
             synchronized (DevicesInHouse.class) {
@@ -28,10 +48,6 @@ public class DevicesInHouse {
         }
     }
 
-    public ArrayList<ElectricalDevice> getAllDevicesInHouse() {
-        return allDevicesInHouse;
-    }
-
 
     public void createDevice(Devices device) {
         if (device != null) {
@@ -39,6 +55,17 @@ public class DevicesInHouse {
         }
     }
 
+    public ArrayList<ElectricalDevice> getAllDevicesInHouse() {
+        return allDevicesInHouse;
+    }
+
+
+    /**
+     * Creates all types of devices that {@link Devices}
+     * contains
+     *
+     * @return ArrayList of all possible devices
+     */
     public ArrayList<ElectricalDevice> buyAllDevices() {
         for (Devices d : Devices.values()) {
             createDevice(d);
@@ -46,6 +73,15 @@ public class DevicesInHouse {
         return allDevicesInHouse;
     }
 
+
+    /**
+     * Select devices from allDevicesInHouse that consumes
+     * energy in range
+     *
+     * @param start beginning of range
+     * @param end   end of range
+     * @return ArrayList of all devices that satisfies conditions
+     */
     public ArrayList<ElectricalDevice> matchedDevicesInRange(String start, String end) {
         ArrayList<ElectricalDevice> matchedDevices = new ArrayList<>();
         for (ElectricalDevice device : this.allDevicesInHouse) {

@@ -11,6 +11,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 
+
+/**
+ * Display main page information with list
+ * of all devices in house
+ *
+ * @author Bohdan Radchuk
+ */
 public class HouseServlet extends HttpServlet {
     private static final String HOUSE_DEVICES = "HouseDevices";
     private static final String TOTAL_ENERGY = "totalEnergy";
@@ -30,7 +37,6 @@ public class HouseServlet extends HttpServlet {
 
         req.setAttribute(HOUSE_DEVICES, electricalDevices);
         req.setAttribute(TOTAL_ENERGY, EnergyCalculator.totalEnergyConsuming(electricalDevices));
-
         req.getRequestDispatcher(HOUSE_JSP).forward(req, resp);
     }
 

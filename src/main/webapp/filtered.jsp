@@ -10,6 +10,11 @@
 <body>
 
 <table class="table table-hover ">
+    <th>Image</th>
+    <th>Device type</th>
+    <th>Manufacturer</th>
+    <th>Energy consuming</th>
+    <th>Energy consuming now</th>
     <c:out value="${errorMessage}"></c:out>
     <c:forEach items="${matchedDevices}" var="item" varStatus="status">
         <div class="container">

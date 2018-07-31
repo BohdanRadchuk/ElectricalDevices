@@ -4,6 +4,11 @@ import com.trainings.entity.ElectricalDevice;
 
 import java.util.List;
 
+/**
+ * Counts energy consuming of all turned on devices
+ *
+ * @author Bohdan Radchuk
+ */
 public class EnergyCalculator {
 
     public static int totalEnergyConsuming(List<ElectricalDevice> deviceList) {

@@ -1,5 +1,10 @@
 package com.trainings.entity;
 
+/**
+ * Basic entity for all devices
+ *
+ * @author Bohdan Radchuk
+ */
 public abstract class ElectricalDevice {
 
     private String type;
@@ -33,6 +38,19 @@ public abstract class ElectricalDevice {
         this.turnedOn = false;
     }
 
+    public int getEnergyConsuming() {
+        return energyConsuming;
+    }
+
+    public boolean isTurnedOn() {
+        return turnedOn;
+    }
+
+    public abstract String interact();
+
+    /*
+    Do not delete getters they are used in frontend
+     */
     public String getType() {
         return type;
     }
@@ -44,16 +62,6 @@ public abstract class ElectricalDevice {
     public String getManufacturer() {
         return manufacturer;
     }
-
-    public int getEnergyConsuming() {
-        return energyConsuming;
-    }
-
-    public boolean isTurnedOn() {
-        return turnedOn;
-    }
-
-    public abstract String interact();
 
     @Override
     public String toString() {

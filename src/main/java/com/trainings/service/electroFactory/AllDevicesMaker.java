@@ -2,6 +2,13 @@ package com.trainings.service.electroFactory;
 
 import com.trainings.entity.Devices;
 
+/**
+ * Component of Factory design pattern.
+ *
+ * Performs functions of receiving required entity
+ * depending {@link com.trainings.entity.Devices} type
+ * @author Bohdan Radchuk
+ */
 public class AllDevicesMaker {
     public static ElectricalDeviceMaker getMakerByEnum (Devices deviceToMake){
         if (deviceToMake.equals(Devices.STOVE)){

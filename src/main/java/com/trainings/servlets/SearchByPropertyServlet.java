@@ -11,6 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Displays list of devices that consumes
+ * energy in some range(min - max) or error
+ * depending on type (Not a string/No device in a range)
+ */
 public class SearchByPropertyServlet extends HttpServlet {
 
     private static final String START_PARAMETER = "powerStart";
