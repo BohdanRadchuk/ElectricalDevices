@@ -1,6 +1,6 @@
 package com.trainings.entity;
 
-import com.trainings.service.electroFactory.AllDevicesMaker;
+import com.trainings.service.factory.AllDevicesMaker;
 
 import java.util.ArrayList;
 
